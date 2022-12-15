@@ -1,0 +1,16 @@
+{
+  "name": "ziyu-debug-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:react": "cd ./packages/test-react-debug && pnpm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-scripts": "5.0.1"
+  }
+}
