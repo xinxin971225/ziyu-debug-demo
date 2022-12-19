@@ -10,6 +10,12 @@ importers:
       react: 18.2.0
       react-scripts: 5.0.1_react@18.2.0
 
+  packages/source-map-test:
+    specifiers:
+      source-map: ^0.7.4
+    dependencies:
+      source-map: 0.7.4
+
 packages:
 
   /@ampproject/remapping/2.2.0:
