@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:react": "cd ./packages/test-react-debug && pnpm run start"
+    "dev:react": "cd ./packages/test-react-debug && pnpm run start",
+    "dev:vue": "cd ./packages/vue-debug-demo1 && pnpm run serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vue/cli": "^5.0.8",
     "react": "^18.2.0",
     "react-scripts": "5.0.1"
   }
