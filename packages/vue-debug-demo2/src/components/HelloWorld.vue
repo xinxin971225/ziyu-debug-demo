@@ -1,12 +1,21 @@
 <script setup lang="ts">
+import { reactive } from "vue";
+
 defineProps<{
   msg: string;
 }>();
+const state = reactive({
+  name: "53",
+});
+const nameCb = () => {
+  console.log("state", state.name);
+  state.name = "ziyu";
+};
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green" @click="nameCb">{{ state.name }}</h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +

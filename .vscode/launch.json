@@ -1,6 +1,16 @@
 {
   "configurations": [
     {
+      "name": "Launch vue3",
+      "request": "launch",
+      "type": "chrome",
+      "runtimeArgs": ["--auto-open-devtools-for-tabs "],
+      "userDataDir": false,
+      "runtimeExecutable": "canary",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "name": "Launch vue",
       "request": "launch",
       "type": "chrome",
