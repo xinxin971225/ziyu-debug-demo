@@ -754,7 +754,7 @@ module.exports = function (webpackEnv) {
     performance: false,
     externals: {
       react: "React",
-      "react-dom": "ReactDom",
+      "react-dom": "ReactDOM",
     },
   };
 };
