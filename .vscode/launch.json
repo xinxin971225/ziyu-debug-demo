@@ -1,6 +1,19 @@
 {
   "configurations": [
     {
+      "name": "Launch React webpack",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5555",
+      "webRoot": "${workspaceFolder}",
+      "file": "${workspaceFolder}/packages/webpack-react-debug/index.html",
+      "sourceMapPathOverrides": {
+        "meteor://💻app/*": "${workspaceFolder}/packages/*",
+        "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
+        "webpack://*": "${workspaceFolder}/packages/*"
+      }
+    },
+    {
       "name": "Launch vue3",
       "request": "launch",
       "type": "chrome",
