@@ -24,9 +24,11 @@
       "webRoot": "${workspaceFolder}"
     },
     {
-      "name": "Launch vue",
+      "name": "Launch vue webpack",
       "request": "launch",
       "type": "chrome",
+      "runtimeExecutable": "canary",
+      "userDataDir": false,
       "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}",
       "sourceMapPathOverrides": {

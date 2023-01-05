@@ -6,7 +6,8 @@
   "scripts": {
     "dev:react": "cd ./packages/test-react-debug && pnpm run start",
     "dev:vue": "cd ./packages/vue-debug-demo1 && pnpm run serve",
-    "dev:vue3": "cd ./packages/vue-debug-demo2 && pnpm run dev"
+    "dev:vue3": "cd ./packages/vue-debug-demo2 && pnpm run dev",
+    "dev:vue3Webpack": "cd ./packages/vue3-webpack-demo && pnpm run serve"
   },
   "keywords": [],
   "author": "",
