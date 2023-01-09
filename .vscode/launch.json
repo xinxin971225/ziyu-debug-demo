@@ -1,6 +1,22 @@
 {
   "configurations": [
     {
+      "name": "Launch Node Program",
+      "program": "${workspaceFolder}/packages/node-debug-demo/index.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "stopOnEntry": true, //首行断
+      "type": "node"
+    },
+    {
+      "name": "Attach Node",
+      "port": 8888,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+
+    {
       "name": "Launch React webpack",
       "request": "launch",
       "type": "chrome",
