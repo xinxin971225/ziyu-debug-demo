@@ -1,6 +1,26 @@
 {
   "configurations": [
     {
+      "name": "Launch via pnpm vue3 webpack",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "dev:vue3Webpack"],
+      "runtimeExecutable": "pnpm",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "name": "Launch via pnpm react",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "dev:react"],
+      "stopOnEntry": true, //首行断
+      "console": "integratedTerminal",
+      "runtimeExecutable": "pnpm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+
+    {
       "name": "Launch Node Program",
       "program": "${workspaceFolder}/packages/node-debug-demo/index.js",
       "request": "launch",
