@@ -1,3 +1,5 @@
+console.log(process);
+
 const fs = require("fs/promises");
 
 (async function() {
