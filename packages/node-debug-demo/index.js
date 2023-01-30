@@ -1,4 +1,8 @@
-console.log(process);
+const cp = require("child_process");
+
+cp.spawnSync("node", ["./a.js"], {
+  stdio: "inherit",
+});
 
 const fs = require("fs/promises");
 

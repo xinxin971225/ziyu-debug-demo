@@ -33,6 +33,7 @@
       "program": "${workspaceFolder}/packages/node-debug-demo/index.js",
       "request": "launch",
       "args": ["--aaa", "--aaa2"],
+      "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
       "stopOnEntry": true, //首行断
       "type": "node"
@@ -45,6 +46,7 @@
         "delay": 1000,
         "maxAttempts": 3
       },
+      "autoAttachChildProcesses": true,
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
     },
