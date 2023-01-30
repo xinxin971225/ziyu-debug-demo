@@ -6,7 +6,12 @@
       "request": "attach",
       "skipFiles": ["<node_internals>/**"],
 
-      "type": "node"
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "attach Node",
+        "order": 1
+      }
     },
     {
       "name": "Launch via pnpm vue3 webpack",
@@ -15,6 +20,11 @@
       "runtimeExecutable": "pnpm",
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      },
       "type": "node"
     },
     {
@@ -25,6 +35,11 @@
       "console": "integratedTerminal",
       "runtimeExecutable": "pnpm",
       "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      },
       "type": "node"
     },
 
@@ -36,6 +51,11 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
       "stopOnEntry": true, //首行断
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      },
       "type": "node"
     },
     {
@@ -48,6 +68,11 @@
       },
       "autoAttachChildProcesses": true,
       "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "attach Node",
+        "order": 1
+      },
       "type": "node"
     },
 
@@ -58,6 +83,11 @@
       "url": "http://localhost:5555",
       "webRoot": "${workspaceFolder}",
       "file": "${workspaceFolder}/packages/webpack-react-debug/index.html",
+      "presentation": {
+        "hidden": false,
+        "group": "launch chrome",
+        "order": 1
+      },
       "sourceMapPathOverrides": {
         "meteor://💻app/*": "${workspaceFolder}/packages/*",
         "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
@@ -71,6 +101,11 @@
       // "runtimeArgs": ["--auto-open-devtools-for-tabs "],
       "userDataDir": false,
       "runtimeExecutable": "canary",
+      "presentation": {
+        "hidden": false,
+        "group": "launch chrome",
+        "order": 1
+      },
       "url": "http://localhost:5173",
       "webRoot": "${workspaceFolder}"
     },
@@ -79,6 +114,11 @@
       "request": "launch",
       "type": "chrome",
       "runtimeExecutable": "canary",
+      "presentation": {
+        "hidden": false,
+        "group": "launch chrome",
+        "order": 1
+      },
       "userDataDir": false,
       "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}",
@@ -93,12 +133,22 @@
       "port": 9222,
       "request": "attach",
       "type": "chrome",
+      "presentation": {
+        "hidden": false,
+        "group": "Attach chrome",
+        "order": 1
+      },
       "webRoot": "${workspaceFolder}"
     },
     {
       "name": "Launch react",
       "request": "launch",
       "runtimeExecutable": "canary",
+      "presentation": {
+        "hidden": false,
+        "group": "launch chrome",
+        "order": 1
+      },
       // "runtimeArgs": ["--auto-open-devtools-for-tabs "],
       "userDataDir": false,
       "type": "chrome",
