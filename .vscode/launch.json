@@ -14,6 +14,20 @@
       }
     },
     {
+      "name": "Launch via pnpm nest",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "dev:nest"],
+      "runtimeExecutable": "pnpm",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      },
+      "type": "node"
+    },
+    {
       "name": "Launch via pnpm vue3 webpack",
       "request": "launch",
       "runtimeArgs": ["run-script", "dev:vue3Webpack"],
