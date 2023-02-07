@@ -72,7 +72,34 @@
       },
       "type": "node"
     },
-
+    {
+      "name": "eslint 调试",
+      "program": "${workspaceFolder}/packages/shell-debug-demo/node_modules/.bin/eslint",
+      "args": ["./index.js", "--fix"],
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/packages/shell-debug-demo",
+      "request": "launch",
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
+      "name": "调试 eslint api",
+      "program": "${workspaceFolder}/packages/shell-debug-demo/eslintApiDebugger.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
     {
       "name": "Launch Node Program",
       "program": "${workspaceFolder}/packages/node-debug-demo/index.js",
