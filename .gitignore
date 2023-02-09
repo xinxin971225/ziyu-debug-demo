@@ -8,6 +8,7 @@ node_modules
 packages/react/
 packages/vue3/
 packages/nest/
+packages/patch-package/
 # testing
 /coverage
 

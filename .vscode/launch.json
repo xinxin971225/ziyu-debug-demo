@@ -88,6 +88,35 @@
       }
     },
     {
+      "name": "调试 patch-package 生成差异 需要下载patch-package源码 进行build",
+      "program": "${workspaceFolder}/packages/patch-package/dist/index.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}/packages/patch-package",
+      "console": "integratedTerminal",
+      "args": ["acorn"],
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
+      "name": "调试 patch-package 应用差异 需要下载patch-package源码 进行build",
+      "program": "${workspaceFolder}/packages/patch-package/dist/index.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}/packages/patch-package",
+      "console": "integratedTerminal",
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
       "name": "调试 eslint api",
       "program": "${workspaceFolder}/packages/shell-debug-demo/eslintApiDebugger.js",
       "request": "launch",
