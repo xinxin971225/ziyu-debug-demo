@@ -130,6 +130,22 @@
       }
     },
     {
+      "name": "调试 babel api",
+      "program": "${workspaceFolder}/packages/babel-debug-demo/index.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/packages/babel-debug-demo",
+
+      "type": "node",
+      "resolveSourceMapLocations": ["${workspaceFolder}/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
       "name": "Launch Node Program",
       "program": "${workspaceFolder}/packages/node-debug-demo/index.js",
       "request": "launch",

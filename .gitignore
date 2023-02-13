@@ -9,6 +9,7 @@ packages/react/
 packages/vue3/
 packages/nest/
 packages/patch-package/
+packages/babel/
 # testing
 /coverage
 
