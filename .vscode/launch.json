@@ -58,11 +58,13 @@
       "type": "node"
     },
     {
-      "name": "Launch via pnpm vue3 debug vite",
+      "name": "Launch via npm vue3 debug vite",
       "request": "launch",
-      "runtimeArgs": ["run-script", "dev:vue3"],
-      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run-script", "dev"],
+      "cwd": "${workspaceFolder}/packages/vue-debug-demo2/",
+      "runtimeExecutable": "npm",
       "console": "integratedTerminal",
+      "resolveSourceMapLocations": ["${workspaceFolder}/**"],
       "skipFiles": ["<node_internals>/**"],
       "presentation": {
         "hidden": false,
