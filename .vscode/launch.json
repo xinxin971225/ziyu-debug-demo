@@ -58,6 +58,20 @@
       "type": "node"
     },
     {
+      "name": "Launch via pnpm vue3 debug vite",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "dev:vue3"],
+      "runtimeExecutable": "pnpm",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      },
+      "type": "node"
+    },
+    {
       "name": "Launch via pnpm react",
       "request": "launch",
       "runtimeArgs": ["run-script", "dev:react"],

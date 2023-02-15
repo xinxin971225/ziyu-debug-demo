@@ -10,6 +10,7 @@ packages/vue3/
 packages/nest/
 packages/patch-package/
 packages/babel/
+packages/vite/
 # testing
 /coverage
 
