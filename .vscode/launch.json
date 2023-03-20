@@ -104,6 +104,37 @@
       }
     },
     {
+      "name": "调试 ts 源码 需要下载源码 然后npm run build:compiler",
+      "program": "${workspaceFolder}/packages/typescript/built/local/tsc.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}/packages/typescript",
+      "console": "integratedTerminal",
+      "args": ["../ts-debug-demo/input.ts"],
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
+      "name": "调试 ts 源码 api 形式 需要npm run build:compiler",
+      "program": "${workspaceFolder}/packages/ts-debug-demo/test.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/packages/ts-debug-demo",
+
+      "args": ["./input.ts"],
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
       "name": "调试 patch-package 生成差异 需要下载patch-package源码 进行build",
       "program": "${workspaceFolder}/packages/patch-package/dist/index.js",
       "request": "launch",

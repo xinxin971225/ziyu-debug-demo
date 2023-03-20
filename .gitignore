@@ -11,6 +11,7 @@ packages/nest/
 packages/patch-package/
 packages/babel/
 packages/vite/
+packages/TypeScript/
 # testing
 /coverage
 
