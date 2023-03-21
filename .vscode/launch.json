@@ -135,6 +135,31 @@
       }
     },
     {
+      "name": "断点类型尝试",
+      "program": "${workspaceFolder}/packages/break-point-debug-demo/test.js",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/packages/break-point-debug-demo",
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
+      "name": "断点类型尝试-网页版",
+      "file": "${workspaceFolder}/packages/break-point-debug-demo/index.html",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/packages/break-point-debug-demo",
+      "type": "chrome",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
+      }
+    },
+    {
       "name": "调试 patch-package 生成差异 需要下载patch-package源码 进行build",
       "program": "${workspaceFolder}/packages/patch-package/dist/index.js",
       "request": "launch",
@@ -302,7 +327,12 @@
       "userDataDir": false,
       "type": "chrome",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "meteor://💻app/*": "${workspaceFolder}/packages/*",
+        "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
+        "webpack://*": "${workspaceFolder}/packages/*"
+      }
     }
   ]
 }
