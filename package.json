@@ -6,6 +6,7 @@
   "scripts": {
     "dev:react": "cd ./packages/test-react-debug && pnpm run start",
     "dev:node": "cd ./packages/node-debug-demo && node --inspect-brk=8888 ./index.js",
+    "dev:vue2-element": "cd ./packages/element-vue-test && pnpm run serve",
     "dev:vue": "cd ./packages/vue-debug-demo1 && pnpm run serve",
     "dev:vue3": "cd ./packages/vue-debug-demo2 && pnpm run dev",
     "dev:vue3Webpack": "cd ./packages/vue3-webpack-demo && pnpm run serve",

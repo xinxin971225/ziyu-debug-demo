@@ -12,6 +12,7 @@ packages/patch-package/
 packages/babel/
 packages/vite/
 packages/TypeScript/
+packages/element/
 packages/ant-design/
 # testing
 /coverage
