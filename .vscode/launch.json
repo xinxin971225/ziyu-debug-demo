@@ -251,6 +251,25 @@
     },
 
     {
+      "name": "Launch performationTest",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5555",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": ["--auto-open-devtools-for-tabs"],
+      "file": "${workspaceFolder}/packages/webpack-react-debug/performationTest.html",
+      "presentation": {
+        "hidden": false,
+        "group": "launch chrome",
+        "order": 1
+      },
+      "sourceMapPathOverrides": {
+        "meteor://💻app/*": "${workspaceFolder}/packages/*",
+        "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
+        "webpack://*": "${workspaceFolder}/packages/*"
+      }
+    },
+    {
       "name": "Launch React webpack",
       "request": "launch",
       "type": "chrome",
