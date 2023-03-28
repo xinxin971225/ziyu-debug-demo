@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function calc() {
+        let a;
+        for (let index = 0; index < 10000000; index++) {
+          a += 1;
+        }
+      }
+      function printMutation() {
+        console.log("Mutation");
+      }
+      function printPromise1() {
+        calc();
+
+        console.log("promise1");
+      }
+      function printTimer2() {
+        calc();
+
+        console.log("timer2");
+      }
+      function printTimer3() {
+        calc();
+
+        console.log("timer3");
+      }
+      function printTimer1() {
+        calc();
+
+        console.log("timer1");
+      }
+      function printPromise2() {
+        calc();
+
+        console.log("promise2");
+      }
+      function printStart() {
+        console.log("start");
+        calc();
+      }
+
+      Promise.resolve().then(() => {
+        //微任务
+        printPromise1();
+        const timer2 = setTimeout(printTimer2, 0); //宏任务
+        const timer3 = requestAnimationFrame(printTimer3); //宏任务
+      });
+      const timer1 = setTimeout(() => {
+        //宏任务
+        printTimer1();
+        Promise.resolve().then(printPromise2); //微任务
+      }, 0);
+
+      new MutationObserver(function () {
+        //微任务
+        printMutation();
+      }).observe(document.body, {
+        type: "attribute",
+        attributeFilter: ["aaa"],
+      });
+      document.body.setAttribute("aaa", "ziyu");
+
+      printStart(); //宏任务
+
+      /**
+       * 浏览器执行解析html执行script时都是会以一个宏任务的形式
+       * 当前任务可以生成微任务也可以添加宏任务
+       * 当宏任务运行完会检测微任务，有就会去执行
+       * 执行完毕后就开始下一个宏任务
+       * 这样形成一个event loop
+       */
+    </script>
+  </body>
+</html>
