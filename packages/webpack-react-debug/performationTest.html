@@ -5,6 +5,8 @@
     <title>worker performance optimization</title>
   </head>
   <body>
+    <video elementtiming="meaningful" />
+
     <script>
       function runWorker(url, num) {
         return new Promise((resolve, reject) => {
@@ -37,19 +39,97 @@
       a();
     </script>
     <script>
-      function c() {
-        d();
-      }
-      function d() {
-        runWorker("./worker.js", 10000 * 10000)
-          .then((res) => {
-            console.log("d:", res);
-          })
-          .catch((e) => {
-            console.log(e);
-          });
-      }
-      c();
+      //   function c() {
+      //     d();
+      //   }
+      //   function d() {
+      //     runWorker("./worker.js", 10000 * 10000)
+      //       .then((res) => {
+      //         console.log("d:", res);
+      //       })
+      //       .catch((e) => {
+      //         console.log(e);
+      //       });
+      //   }
+      //   c();
+      const {
+        responseStart,
+        requestStart,
+        domContentLoadedEventEnd,
+        fetchStart,
+        domInteractive,
+        loadEventEnd,
+      } = performance.timing;
+      console.log(performance);
+      const TTFB = responseStart - requestStart;
+      console.log("TTFB （首字节到达）", TTFB);
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+
+        for (const entry of entries) {
+          if (entry.responseStart > 0) {
+            console.log(
+              `PerformanceObserver TTFB （首字节到达）: ${entry.responseStart}`,
+              entry.name
+            );
+          }
+        }
+      }).observe({
+        type: "resource",
+        buffered: true,
+      });
+
+      const paint = performance.getEntriesByType("paint");
+      const FP = paint[0]?.startTime;
+      console.log("FP （首次绘制）", paint, FP);
+      const FCP = paint[1]?.startTime;
+      console.log("FCP （首次内容绘制）", FCP);
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntriesByName(
+          "first-contentful-paint"
+        )) {
+          console.log(
+            "FCP （首次内容绘制） candidate:",
+            entry.startTime,
+            entry
+          );
+        }
+      }).observe({ type: "paint", buffered: true });
+
+      //LCP
+      new PerformanceObserver((entryList, observer) => {
+        const entries = entryList.getEntries();
+        observer.disconnect();
+
+        const LCP = entries[entries.length - 1].startTime;
+        console.log("LCP （最大内容绘制）", LCP);
+      }).observe({ entryTypes: ["largest-contentful-paint"] });
+
+      //FMP
+      new PerformanceObserver((entryList, observer) => {
+        const entries = entryList.getEntries();
+        observer.disconnect();
+
+        const FMP = entries[0].startTime;
+        console.log("FMP （首次有意义的绘制）", FMP);
+      }).observe({ entryTypes: ["element"] });
+
+      const DCL = domContentLoadedEventEnd - fetchStart;
+      console.log("DCL（DOM内容加载完成） domContentLoadedEventEnd", DCL);
+
+      const L = loadEventEnd - fetchStart;
+      console.log("L（加载完成） loadEventEnd", L);
+
+      const TTI = domInteractive - fetchStart;
+      console.log("TTI （可交互时间） domInteractive", TTI);
+
+      new PerformanceObserver((entryList, observer) => {
+        const entries = entryList.getEntries();
+        observer.disconnect();
+
+        FID = entries[0].processingStart - entries[0].startTime;
+        console.log("FID （首次输入延迟）", FID);
+      }).observe({ type: ["first-input"], buffered: true });
     </script>
   </body>
 </html>
