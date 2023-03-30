@@ -257,7 +257,7 @@
       "url": "http://localhost:5555",
       "webRoot": "${workspaceFolder}",
       "runtimeArgs": ["--auto-open-devtools-for-tabs"],
-      "file": "${workspaceFolder}/packages/webpack-react-debug/performationTest.html",
+      "file": "${workspaceFolder}/packages/webpack-react-debug/log.html",
       "presentation": {
         "hidden": false,
         "group": "launch chrome",
