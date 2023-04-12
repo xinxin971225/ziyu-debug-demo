@@ -1,0 +1,1 @@
+(()=>{let o=[4,23,100,9,7,49,36,56];console.log("最终数据：",o);for(let l=0;l<o.length-1;l++){for(let e=0;e<o.length-l-1;e++)o[e]>o[e+1]&&([o[e],o[e+1]]=[o[e+1],o[e]]);throw Error()}console.log("原始数据：",o)})();

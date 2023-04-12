@@ -5,6 +5,7 @@ node_modules
 /.pnp
 .pnp.js
 
+ziyu
 packages/react/
 packages/vue3/
 packages/nest/

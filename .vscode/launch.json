@@ -1,6 +1,15 @@
 {
   "configurations": [
     {
+      "name": "Launch error debug Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "userDataDir": "${workspaceFolder}/ziyu/mydatadir",
+      "url": "http://localhost:5555/packages/online-webpack-debug-demo/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+
+    {
       "name": "Attach by Process ID",
       "processId": "${command:PickProcess}",
       "request": "attach",
