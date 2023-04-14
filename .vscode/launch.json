@@ -5,8 +5,8 @@
       "request": "launch",
       "type": "chrome",
       "userDataDir": "${workspaceFolder}/ziyu/mydatadir",
-      "url": "http://localhost:5555/packages/online-webpack-debug-demo/index.html",
-      "webRoot": "${workspaceFolder}"
+      "url": "http://www.ziyutest.com:8080/",
+      "webRoot": "${workspaceFolder}/packages/online-webpack-debug-demo"
     },
 
     {
