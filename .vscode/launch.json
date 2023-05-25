@@ -4,8 +4,9 @@
       "name": "Launch error debug Chrome",
       "request": "launch",
       "type": "chrome",
+      "runtimeExecutable": "canary",
       "userDataDir": "${workspaceFolder}/ziyu/mydatadir",
-      "url": "http://www.ziyutest.com:8080/",
+      "url": "http://www.ziyutest.com:8084/",
       "webRoot": "${workspaceFolder}/packages/online-webpack-debug-demo"
     },
 
@@ -360,6 +361,19 @@
         "meteor://💻app/*": "${workspaceFolder}/packages/*",
         "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
         "webpack://*": "${workspaceFolder}/packages/*"
+      }
+    },
+    {
+      "name": "webSockit测试",
+      "program": "${workspaceFolder}/packages/online-webpack-debug-demo/script/frontedWebSocket.js",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "type": "node",
+      "presentation": {
+        "hidden": false,
+        "group": "launch Node",
+        "order": 1
       }
     }
   ]
