@@ -15,3 +15,25 @@
 - 进入调试模式并临时创建 user data dir 的话，调整状态下的 chrome 会是一个全新的空白状态，例如原本 chrome 上保存的标签与安装的插件都不存在
 
 - 为了能复用 user data dir 来获取平时使用的工具，可以采用不同版本的 chrome，创建不同的独立的 Chrome 实例
+
+### 测试 devtools 工具链需要先下载
+
+```bash
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+
+export PATH=/本地的路径/depot_tools:$PATH
+
+(科学上网) fetch devtools-frontend
+
+```
+
+调整代码并执行
+
+```bash
+gn gen out/Default --args='devtools_skip_typecheck=true'
+
+autoninja -C out/Default
+
+```
+
+启动项目的时候，或者调试的时候加个参数 `--custom-devtools-frontend=file://本地路径/devtools/devtools-frontend/out/Default/gen/front_end` 就可以用自己修改过的开发调试工具了
